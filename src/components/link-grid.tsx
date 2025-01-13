@@ -10,7 +10,7 @@ const links = [
   {
     title: "FM Booking",
     href: "https://fm-booking.com/artists/kabayun",
-    description: "Professional booking services",
+    description: "Artist profile and booking information",
   },
   {
     title: "Sangoma Records",
@@ -20,7 +20,7 @@ const links = [
   {
     title: "Website",
     href: "https://superluminalpsy.com/",
-    description: "Official website and portfolio",
+    description: "Official website",
   },
 ];
 

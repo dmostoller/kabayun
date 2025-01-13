@@ -1,13 +1,12 @@
 "use client";
 
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light" | "system";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
   defaultTheme?: Theme;
-  storageKey?: string;
 };
 
 type ThemeProviderState = {
@@ -25,20 +24,19 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "theme",
 }: ThemeProviderProps) {
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+
   useEffect(() => {
-    const theme = (localStorage.getItem(storageKey) as Theme) || defaultTheme;
     document.documentElement.setAttribute("data-theme", theme);
-  }, [storageKey, defaultTheme]);
+  }, [theme]);
 
   return (
     <ThemeProviderContext.Provider
       value={{
-        theme: (localStorage.getItem(storageKey) as Theme) || defaultTheme,
-        setTheme: (theme: Theme) => {
-          localStorage.setItem(storageKey, theme);
-          document.documentElement.setAttribute("data-theme", theme);
+        theme,
+        setTheme: (newTheme: Theme) => {
+          setTheme(newTheme);
         },
       }}
     >
