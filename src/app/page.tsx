@@ -11,7 +11,7 @@ export default function Home() {
           <ModeToggle />
         </div>
         <div className="text-center mb-8">
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+          <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
             <Image
               src="/22cc-Kabayun.jpg"
               alt="Profile"

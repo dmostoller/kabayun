@@ -6,8 +6,55 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kabayun Links",
-  description: "Music projects and collaborations by Kabayun",
+  title: "Kabayun - Psytrance Producer & DJ",
+  description:
+    "Music projects and collaborations by Kabayun (David Mostoller) - Psytrance producer from Philadelphia, USA. Featured at major festivals including Boom, Ozora, MoDem, and Lost Theory.",
+  keywords: [
+    "Kabayun",
+    "David Mostoller",
+    "Psytrance",
+    "Electronic Music",
+    "Sangoma Records",
+    "Philadelphia",
+    "DJ",
+    "Producer",
+    "Festival",
+    "Boom Festival",
+    "Ozora",
+    "MoDem Festival",
+  ],
+  authors: [{ name: "David Mostoller", url: "https://www.kabayun.com" }],
+  creator: "David Mostoller",
+  publisher: "Kabayun",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.kabayun.com",
+    siteName: "Kabayun",
+    title: "Kabayun - Psychedelic Trance Music",
+    description:
+      "Psytrance producer David Mostoller (Kabayun) creates intensely psychedelic experiences through music, performing at major festivals worldwide including Boom, Ozora, and MoDem.",
+    images: [
+      {
+        url: "/22cc-Kabayun.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kabayun - Psytrance Producer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kabayun - Psytrance Producer & DJ",
+    description:
+      "Psytrance producer from Philadelphia, performing at major festivals worldwide. Released on Sangoma Records.",
+    images: ["/22cc-Kabayun.jpg"],
+    creator: "@kabayun",
+  },
+  alternates: {
+    canonical: "https://www.kabayun.com",
+  },
+  category: "Music",
 };
 
 export default function RootLayout({
