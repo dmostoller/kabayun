@@ -5,6 +5,7 @@ import {
   faYoutube,
   faPatreon,
   faWhatsapp,
+  faThreads,
   faBandcamp,
   faSpotify,
   faSoundcloud,
@@ -21,42 +22,47 @@ type Social = {
 const socials: Social[] = [
   {
     icon: faInstagram,
-    href: "https://instagram.com/kabayun",
+    href: "https://www.instagram.com/dave_kabayun",
     label: "Instagram",
   },
   {
     icon: faEnvelope,
-    href: "mailto:contact@kabayun.com",
+    href: "mailto:kabayun@gmail.com",
     label: "Email",
   },
   {
     icon: faFacebook,
-    href: "https://facebook.com/kabayun",
+    href: "https://www.facebook.com/Kabayun/",
     label: "Facebook",
   },
   {
+    icon: faThreads,
+    href: "https://www.threads.net/@dave_kabayun",
+    label: "Threads",
+  },
+  {
     icon: faYoutube,
-    href: "https://youtube.com/@kabayun",
+    href: "https://www.youtube.com/channel/UCGePscP8I_b2ta5Vuj1j-bQ",
     label: "YouTube",
   },
   {
     icon: faPatreon,
-    href: "https://patreon.com/kabayun",
+    href: "https://www.patreon.com/c/superluminal_kabayun_yasmin",
     label: "Patreon",
   },
   {
     icon: faWhatsapp,
-    href: "https://wa.me/1234567890",
+    href: "https://api.whatsapp.com/send?phone=16093562011",
     label: "WhatsApp",
   },
   {
     icon: faBandcamp,
-    href: "https://kabayun.bandcamp.com",
+    href: "https://kabayun.bandcamp.com/",
     label: "Bandcamp",
   },
   {
     icon: faSpotify,
-    href: "https://open.spotify.com/artist/kabayun",
+    href: "https://open.spotify.com/artist/4GCJrvLvJrkNkvgrYJTYMW",
     label: "Spotify",
   },
   {
