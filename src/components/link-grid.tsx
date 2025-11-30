@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Card } from "@/components/ui/card";
 
 const links = [
   {
@@ -27,17 +26,23 @@ const links = [
 export function LinkGrid() {
   return (
     <div className="grid gap-4">
-      {links.map((link) => (
+      {links.map((link, index) => (
         <Link
           key={link.href}
           href={link.href}
           target="_blank"
-          referrerPolicy="no-referrer"
+          rel="noopener noreferrer"
+          className={`block animate-fade-in-up animation-delay-${(index + 6) * 100}`}
+          style={{ animationDelay: `${(index + 6) * 100}ms` }}
         >
-          <Card className="p-4 hover:bg-muted transition-colors text-center">
-            <h2 className="font-semibold">{link.title}</h2>
-            <p className="text-sm text-muted-foreground">{link.description}</p>
-          </Card>
+          <div className="glass-card gradient-border p-5 text-center rounded-xl group">
+            <h2 className="font-display font-semibold text-lg group-hover:text-primary transition-colors">
+              {link.title}
+            </h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              {link.description}
+            </p>
+          </div>
         </Link>
       ))}
     </div>
