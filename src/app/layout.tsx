@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.kabayun.com"),
   title: "Kabayun - Psytrance Producer & DJ",
   description:
     "Music projects and collaborations by Kabayun (David Mostoller) - Psytrance producer from Philadelphia, USA. Featured at major festivals including Boom, Ozora, MoDem, and Lost Theory.",
@@ -36,21 +38,12 @@ export const metadata: Metadata = {
     title: "Kabayun - Psychedelic Trance Music",
     description:
       "Psytrance producer David Mostoller (Kabayun) creates intensely psychedelic experiences through music, performing at major festivals worldwide including Boom, Ozora, and MoDem.",
-    images: [
-      {
-        url: "/22cc-Kabayun.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kabayun - Psytrance Producer",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kabayun - Psytrance Producer & DJ",
     description:
-      "Psytrance producer from Philadelphia, performing at major festivals worldwide. Released on Sangoma Records.",
-    images: ["/22cc-Kabayun.jpg"],
+      "Psytrance producer from Philadelphia, signed to Sangoma Records and FM Booking.",
     creator: "@kabayun",
   },
   alternates: {
@@ -66,7 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${outfit.variable} font-sans`}>
         <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
         <Analytics />
         <>

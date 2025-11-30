@@ -83,7 +83,7 @@ export function SocialLinks() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-110 hover:text-primary"
+                className="social-glow p-3 rounded-full text-muted-foreground hover:bg-muted/30"
                 aria-label={label}
               >
                 <FontAwesomeIcon icon={icon} className="w-5 h-5" />
