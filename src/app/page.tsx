@@ -13,15 +13,18 @@ export default function Home() {
         Skip to content
       </a>
       <CosmicBackground />
-      <main id="main-content" className="relative min-h-screen p-4 md:p-8">
-        <div className="max-w-xl mx-auto">
+      <main
+        id="main-content"
+        className="relative min-h-screen p-4 md:p-8 flex items-center justify-center"
+      >
+        <div className="w-full max-w-xl mx-auto">
           {/* Mode Toggle */}
-          <div className="flex justify-end mb-6 animate-fade-in-up">
+          <div className="flex justify-end mb-0 animate-fade-in-up">
             <ModeToggle />
           </div>
 
           {/* Profile Section */}
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             {/* Profile Photo with Glow - Click to open bio */}
             <div className="animate-fade-in-up animation-delay-100">
               <BioDialog>
@@ -47,12 +50,27 @@ export default function Home() {
             </div>
 
             {/* Name */}
-            <h1 className="font-display text-4xl md:text-5xl font-bold mb-3 tracking-tight animate-fade-in-up animation-delay-200">
-              Kabayun
+            <h1 className="animate-fade-in-up animation-delay-200">
+              <Image
+                src="/kabayun-logo-text-only-black.png"
+                alt="Kabayun"
+                width={280}
+                height={80}
+                className="light-only mx-auto -my-3 animate-pulse-glow"
+                priority
+              />
+              <Image
+                src="/kabayun-logo-text-only-white.png"
+                alt="Kabayun"
+                width={280}
+                height={80}
+                className="dark-only mx-auto -my-3 animate-pulse-glow"
+                priority
+              />
             </h1>
 
             {/* Tagline */}
-            <p className="text-muted-foreground text-lg tracking-wide animate-fade-in-up animation-delay-300">
+            <p className="text-muted-foreground text-lg tracking-wide animate-fade-in-up animation-delay-300 -mb-2 pt-4">
               Drop into the momentary
             </p>
           </div>
