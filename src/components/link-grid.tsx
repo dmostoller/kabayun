@@ -7,7 +7,12 @@ const links = [
     description: "Book me for your next event",
   },
   {
-    title: "Website",
+    title: "Kabayun Academy",
+    href: "https://www.kabayun-academy.com",
+    description: "Learn psytrance production",
+  },
+  {
+    title: "Artist Website",
     href: "https://superluminalpsy.com/",
     description: "Official website",
   },
