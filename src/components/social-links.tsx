@@ -10,7 +10,7 @@ import {
   faFacebook,
   faYoutube,
   faPatreon,
-  faThreads,
+  faApple,
   faBandcamp,
   faSpotify,
   faSoundcloud,
@@ -31,19 +31,14 @@ const socials: Social[] = [
     label: "Instagram",
   },
   {
-    icon: faEnvelope,
-    href: "mailto:kabayun@gmail.com",
-    label: "Email",
-  },
-  {
     icon: faFacebook,
     href: "https://www.facebook.com/Kabayun/",
     label: "Facebook",
   },
   {
-    icon: faThreads,
-    href: "https://www.threads.net/@dave_kabayun",
-    label: "Threads",
+    icon: faEnvelope,
+    href: "mailto:kabayun@gmail.com",
+    label: "Email",
   },
   {
     icon: faYoutube,
@@ -61,14 +56,19 @@ const socials: Social[] = [
     label: "Bandcamp",
   },
   {
+    icon: faSoundcloud,
+    href: "https://soundcloud.com/kabayun",
+    label: "Soundcloud",
+  },
+  {
     icon: faSpotify,
     href: "https://open.spotify.com/artist/4GCJrvLvJrkNkvgrYJTYMW",
     label: "Spotify",
   },
   {
-    icon: faSoundcloud,
-    href: "https://soundcloud.com/kabayun",
-    label: "Soundcloud",
+    icon: faApple,
+    href: "https://music.apple.com/us/artist/kabayun/330395634",
+    label: "Apple Music",
   },
 ];
 
