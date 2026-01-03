@@ -54,62 +54,6 @@
     --glow-primary: 270 100% 70%;
     --glow-secondary: 195 100% 60%;
   }
-
-  /* System preference - light */
-  @media (prefers-color-scheme: light) {
-    :root[data-theme="system"] {
-      --background: 250 20% 97%;
-      --foreground: 250 30% 15%;
-      --card: 250 20% 94%;
-      --card-foreground: 250 30% 15%;
-      --popover: 250 20% 97%;
-      --popover-foreground: 250 30% 15%;
-      --primary: 270 70% 50%;
-      --primary-foreground: 0 0% 100%;
-      --secondary: 200 60% 45%;
-      --secondary-foreground: 0 0% 100%;
-      --muted: 250 15% 90%;
-      --muted-foreground: 250 15% 40%;
-      --accent: 270 50% 92%;
-      --accent-foreground: 270 70% 40%;
-      --destructive: 0 84% 60%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 270 20% 85%;
-      --input: 270 20% 85%;
-      --ring: 270 70% 50%;
-      --radius: 0.75rem;
-      --glow-primary: 270 80% 65%;
-      --glow-secondary: 200 80% 55%;
-    }
-  }
-
-  /* System preference - dark (cosmic deep space) */
-  @media (prefers-color-scheme: dark) {
-    :root[data-theme="system"] {
-      --background: 250 25% 4%;
-      --foreground: 250 10% 95%;
-      --card: 250 25% 8%;
-      --card-foreground: 250 10% 95%;
-      --popover: 250 25% 6%;
-      --popover-foreground: 250 10% 95%;
-      --primary: 270 80% 65%;
-      --primary-foreground: 250 25% 4%;
-      --secondary: 195 85% 55%;
-      --secondary-foreground: 250 25% 4%;
-      --muted: 250 20% 12%;
-      --muted-foreground: 250 15% 55%;
-      --accent: 270 60% 15%;
-      --accent-foreground: 270 80% 75%;
-      --destructive: 0 70% 45%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 270 30% 18%;
-      --input: 270 30% 18%;
-      --ring: 270 80% 65%;
-      --radius: 0.75rem;
-      --glow-primary: 270 100% 70%;
-      --glow-secondary: 195 100% 60%;
-    }
-  }
 }
 
 @layer base {
@@ -122,28 +66,12 @@
 }
 
 /* Theme-based visibility */
-:root[data-theme="light"] .dark-only,
-:root[data-theme="system"] .dark-only {
+:root[data-theme="light"] .dark-only {
   display: none;
 }
 
 :root[data-theme="dark"] .light-only {
   display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root[data-theme="system"] .dark-only {
-    display: block;
-  }
-  :root[data-theme="system"] .light-only {
-    display: none;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root[data-theme="system"] .light-only {
-    display: block;
-  }
 }
 
 /* Cosmic background styles */
@@ -209,16 +137,12 @@
   .glass-card {
     background: hsl(var(--card) / 0.6);
     backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.5);
+    border: 1px solid hsl(var(--border));
     transition: all 0.3s ease-out;
   }
 
   .glass-card:hover {
     background: hsl(var(--card) / 0.8);
-    border-color: hsl(var(--primary) / 0.4);
-    box-shadow:
-      0 0 20px hsl(var(--glow-primary) / 0.15),
-      0 8px 32px hsl(var(--background) / 0.4);
     transform: translateY(-2px) scale(1.01);
   }
 
@@ -513,5 +437,31 @@
   /* Ensure bio dialog text is visible for reduced motion users */
   .bio-dialog .bio-text p {
     opacity: 1;
+  }
+}
+
+/* View Transition API styles */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Shine border animation */
+@layer utilities {
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .animate-shine {
+    animation: shine var(--duration, 14s) infinite linear;
   }
 }
